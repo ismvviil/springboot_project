@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Pootager Nom="Test_Simple" Nb_iterations="100" Size_x="3" Size_y="3">
+    <Parcelle Pos_x="0" Pos_y="0">
+        <Plante Espece="Solanum lycopersicum" Maturite_pied="5" Maturite_fruit="7" Nb_recolte="3" Surface="0.5" Humidite_min="0.5" Humidite_max="0.8"/>
+    </Parcelle>
+    <Parcelle Pos_x="1" Pos_y="0">
+        <Plante_Drageonnante Espece="Fragoria vesca" Maturite_pied="3" Maturite_fruit="4" Nb_recolte="5" Surface="0.2" Humidite_min="0.6" Humidite_max="0.9" Proba_Colonisation="0.3"/>
+    </Parcelle>
+    <Parcelle Pos_x="2" Pos_y="0">
+        <Dispositif Rayon="1">
+            <Programme Produit="Eau" Debut="1" Duree="1" Periode="3"/>
+            <Programme Produit="Engrais" Debut="2" Duree="1" Periode="10"/>
+        </Dispositif>
+    </Parcelle>
+    <Parcelle Pos_x="0" Pos_y="1">
+        <Insecte Espece="Puceron" Sexe="M" Vie_max="10" Duree_vie_max="50" Proba_mobilite="0.6" Resistance_insecticide="0.2" Max_portee="5" Temps_entre_repro="10"/>
+        <Insecte Espece="Puceron" Sexe="F" Vie_max="12" Duree_vie_max="50" Proba_mobilite="0.5" Resistance_insecticide="0.2" Max_portee="5" Temps_entre_repro="10"/>
+    </Parcelle>
+    <Parcelle Pos_x="1" Pos_y="1">
+        <Plante Espece="Tuberosum" Maturite_pied="8" Maturite_fruit="10" Nb_recolte="1" Surface="1.0" Humidite_min="0.3" Humidite_max="0.7"/>
+        <Insecte Espece="Coccinelle" Sexe="F" Vie_max="8" Duree_vie_max="40" Proba_mobilite="0.7" Resistance_insecticide="0.9" Max_portee="4" Temps_entre_repro="8"/>
+    </Parcelle>
+    <Parcelle Pos_x="2" Pos_y="1">
+        <Plante_Drageonnante Espece="Fragoria presta" Maturite_pied="3" Maturite_fruit="4" Nb_recolte="5" Surface="0.2" Humidite_min="0.6" Humidite_max="0.9" Proba_Colonisation="0.6"/>
+    </Parcelle>
+    <Parcelle Pos_x="0" Pos_y="2"/>
+    <Parcelle Pos_x="1" Pos_y="2">
+        <Dispositif Rayon="1">
+            <Programme Produit="Eau" Debut="1" Duree="1" Periode="2"/>
+            <Programme Produit="Insecticide" Debut="10" Duree="1" Periode="20"/>
+        </Dispositif>
+    </Parcelle>
+    <Parcelle Pos_x="2" Pos_y="2">
+        <Insecte Espece="Hanneton" Sexe="M" Vie_max="15" Duree_vie_max="30" Proba_mobilite="0.4" Resistance_insecticide="0.3" Max_portee="3" Temps_entre_repro="7"/>
+    </Parcelle>
+</Pootager>
