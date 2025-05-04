@@ -18163,3 +18163,658 @@
 2025-05-04T22:21:45.240+01:00  INFO 6476 --- [potager-automatise] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-05-04T22:21:48.650+01:00  INFO 6476 --- [potager-automatise] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-05-04T22:21:48.769+01:00  INFO 6476 --- [potager-automatise] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-04T23:56:34.389+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.PotagerV1Application      : Starting PotagerV1Application using Java 23.0.1 with PID 19552 (C:\Users\WIN\OneDrive\Desktop\project-springboot\potager_v1\target\classes started by WIN in C:\Users\WIN\OneDrive\Desktop\project-springboot\potager_v1)
+2025-05-04T23:56:34.392+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.PotagerV1Application      : Running with Spring Boot v3.4.4, Spring v6.2.5
+2025-05-04T23:56:34.393+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.PotagerV1Application      : No active profile set, falling back to 1 default profile: "default"
+2025-05-04T23:56:34.575+01:00  INFO 19552 --- [potager-automatise] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-04T23:56:34.577+01:00  INFO 19552 --- [potager-automatise] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-04T23:56:36.315+01:00  INFO 19552 --- [potager-automatise] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-04T23:56:36.430+01:00  INFO 19552 --- [potager-automatise] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 101 ms. Found 6 JPA repository interfaces.
+2025-05-04T23:56:37.183+01:00  INFO 19552 --- [potager-automatise] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-04T23:56:37.209+01:00  INFO 19552 --- [potager-automatise] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-04T23:56:37.210+01:00  INFO 19552 --- [potager-automatise] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-04T23:56:37.275+01:00  INFO 19552 --- [potager-automatise] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-04T23:56:37.276+01:00  INFO 19552 --- [potager-automatise] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2697 ms
+2025-05-04T23:56:37.607+01:00  INFO 19552 --- [potager-automatise] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-04T23:56:37.769+01:00  INFO 19552 --- [potager-automatise] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-05-04T23:56:37.844+01:00  INFO 19552 --- [potager-automatise] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-04T23:56:38.590+01:00  INFO 19552 --- [potager-automatise] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-04T23:56:38.657+01:00  INFO 19552 --- [potager-automatise] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-04T23:56:39.570+01:00  INFO 19552 --- [potager-automatise] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./potager_db user=SA
+2025-05-04T23:56:39.576+01:00  INFO 19552 --- [potager-automatise] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-04T23:56:39.734+01:00  INFO 19552 --- [potager-automatise] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-04T23:56:44.871+01:00  INFO 19552 --- [potager-automatise] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-04T23:56:45.479+01:00  INFO 19552 --- [potager-automatise] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-04T23:56:49.015+01:00  INFO 19552 --- [potager-automatise] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-04T23:56:55.037+01:00  WARN 19552 --- [potager-automatise] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-04T23:56:55.138+01:00  INFO 19552 --- [potager-automatise] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-05-04T23:56:55.319+01:00  INFO 19552 --- [potager-automatise] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-05-04T23:56:56.145+01:00  INFO 19552 --- [potager-automatise] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./potager_db'
+2025-05-04T23:56:56.244+01:00  INFO 19552 --- [potager-automatise] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-04T23:56:56.297+01:00  INFO 19552 --- [potager-automatise] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-05-04T23:56:56.309+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.PotagerV1Application      : Started PotagerV1Application in 24.158 seconds (process running for 28.64)
+2025-05-04T23:56:56.675+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.SimulationService          : Initialisation d'une nouvelle simulation à partir de 'src/main/resources/potager_test.xml'
+2025-05-04T23:56:56.735+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.SimulationService          : Simulation 'Test_Simple' initialisée avec 9 parcelles
+2025-05-04T23:56:56.770+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.SimulationService          : Démarrage de la simulation 1
+2025-05-04T23:56:56.855+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.SimulationService          : Arrêt de la simulation 1
+2025-05-04T23:56:56.948+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.SimulationService          : Démarrage de la simulation 1
+2025-05-04T23:56:56.955+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.SimulationService          : Exécution du pas 1 de la simulation 1
+2025-05-04T23:56:57.018+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : Application des traitements au pas 1...
+2025-05-04T23:56:57.081+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : Arrosage appliqué depuis la parcelle (2,0) sur 3 parcelles
+2025-05-04T23:56:57.089+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : Arrosage appliqué depuis la parcelle (1,2) sur 4 parcelles
+2025-05-04T23:56:57.090+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : 2 arrosages, 0 engrais, 0 insecticides appliqués
+2025-05-04T23:56:57.090+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Mise à jour des plantes...
+2025-05-04T23:56:57.104+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : 4 plantes mises à jour, 0 plantes sont devenues matures
+2025-05-04T23:56:57.105+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Gestion des insectes...
+2025-05-04T23:56:57.111+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Insecte Puceron s'est déplacé de (0,1) vers (1,1)
+2025-05-04T23:56:57.114+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Insecte Coccinelle s'est déplacé de (1,1) vers (0,0)
+2025-05-04T23:56:57.119+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Insecte Hanneton s'est déplacé de (2,2) vers (1,1)
+2025-05-04T23:56:57.122+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : 4 insectes mis à jour, 0 morts, 3 déplacés, 0 nouveaux
+2025-05-04T23:56:57.122+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Gestion de la colonisation par les plantes drageonnantes...
+2025-05-04T23:56:57.123+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : 0 colonisations effectuées
+2025-05-04T23:56:57.158+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.SimulationService          : Exécution du pas 2 de la simulation 1
+2025-05-04T23:56:57.164+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : Application des traitements au pas 2...
+2025-05-04T23:56:57.168+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : Engrais appliqué depuis la parcelle (2,0) sur 3 parcelles
+2025-05-04T23:56:57.171+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : 0 arrosages, 1 engrais, 0 insecticides appliqués
+2025-05-04T23:56:57.172+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Mise à jour des plantes...
+2025-05-04T23:56:57.184+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : 4 plantes mises à jour, 0 plantes sont devenues matures
+2025-05-04T23:56:57.185+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Gestion des insectes...
+2025-05-04T23:56:57.191+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Insecte Puceron s'est déplacé de (1,1) vers (2,2)
+2025-05-04T23:56:57.196+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : 4 insectes mis à jour, 0 morts, 1 déplacés, 0 nouveaux
+2025-05-04T23:56:57.196+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Gestion de la colonisation par les plantes drageonnantes...
+2025-05-04T23:56:57.196+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : 0 colonisations effectuées
+2025-05-04T23:56:57.213+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.SimulationService          : Exécution du pas 3 de la simulation 1
+2025-05-04T23:56:57.217+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : Application des traitements au pas 3...
+2025-05-04T23:56:57.228+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : Arrosage appliqué depuis la parcelle (1,2) sur 4 parcelles
+2025-05-04T23:56:57.228+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : 1 arrosages, 0 engrais, 0 insecticides appliqués
+2025-05-04T23:56:57.228+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Mise à jour des plantes...
+2025-05-04T23:56:57.237+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,0) est devenue mature
+2025-05-04T23:56:57.241+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Tuberosum en (1,1) : humidité non adaptée (0.8999999999999999)
+2025-05-04T23:56:57.244+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,1) est devenue mature
+2025-05-04T23:56:57.248+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : 4 plantes mises à jour, 2 plantes sont devenues matures
+2025-05-04T23:56:57.249+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Gestion des insectes...
+2025-05-04T23:56:57.252+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Insecte Coccinelle s'est déplacé de (0,0) vers (1,0)
+2025-05-04T23:56:57.256+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Insecte Puceron s'est déplacé de (0,1) vers (1,1)
+2025-05-04T23:56:57.258+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Insecte Hanneton s'est déplacé de (1,1) vers (2,2)
+2025-05-04T23:56:57.266+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : 4 insectes mis à jour, 0 morts, 3 déplacés, 0 nouveaux
+2025-05-04T23:56:57.267+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Gestion de la colonisation par les plantes drageonnantes...
+2025-05-04T23:56:57.269+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (2,1) vers (1,0)
+2025-05-04T23:56:57.272+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : 1 colonisations effectuées
+2025-05-04T23:56:57.305+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.SimulationService          : Exécution du pas 4 de la simulation 1
+2025-05-04T23:56:57.316+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : Application des traitements au pas 4...
+2025-05-04T23:56:57.324+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : Arrosage appliqué depuis la parcelle (2,0) sur 3 parcelles
+2025-05-04T23:56:57.327+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : 1 arrosages, 0 engrais, 0 insecticides appliqués
+2025-05-04T23:56:57.328+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Mise à jour des plantes...
+2025-05-04T23:56:57.333+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,0) peut maintenant produire des fruits
+2025-05-04T23:56:57.337+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Tuberosum en (1,1) : humidité non adaptée (0.8999999999999999)
+2025-05-04T23:56:57.339+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,1) peut maintenant produire des fruits
+2025-05-04T23:56:57.342+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : 5 plantes mises à jour, 0 plantes sont devenues matures
+2025-05-04T23:56:57.342+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Gestion des insectes...
+2025-05-04T23:56:57.345+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Insecte Coccinelle s'est déplacé de (1,0) vers (2,0)
+2025-05-04T23:56:57.349+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Insecte Puceron s'est déplacé de (1,1) vers (0,0)
+2025-05-04T23:56:57.354+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : 4 insectes mis à jour, 0 morts, 2 déplacés, 0 nouveaux
+2025-05-04T23:56:57.355+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Gestion de la colonisation par les plantes drageonnantes...
+2025-05-04T23:56:57.356+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : 0 colonisations effectuées
+2025-05-04T23:56:57.377+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.SimulationService          : Exécution du pas 5 de la simulation 1
+2025-05-04T23:56:57.382+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : Application des traitements au pas 5...
+2025-05-04T23:56:57.399+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : Arrosage appliqué depuis la parcelle (1,2) sur 4 parcelles
+2025-05-04T23:56:57.399+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : 1 arrosages, 0 engrais, 0 insecticides appliqués
+2025-05-04T23:56:57.399+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Mise à jour des plantes...
+2025-05-04T23:56:57.404+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Solanum lycopersicum en (0,0) est devenue mature
+2025-05-04T23:56:57.409+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Tuberosum en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.413+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : 5 plantes mises à jour, 1 plantes sont devenues matures
+2025-05-04T23:56:57.414+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Gestion des insectes...
+2025-05-04T23:56:57.416+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Insecte Puceron s'est déplacé de (0,0) vers (1,0)
+2025-05-04T23:56:57.418+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Insecte Coccinelle mort de faim en (2,0)
+2025-05-04T23:56:57.434+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Insecte Puceron s'est déplacé de (2,2) vers (1,2)
+2025-05-04T23:56:57.434+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Insecte Hanneton s'est déplacé de (2,2) vers (2,1)
+2025-05-04T23:56:57.435+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : 4 insectes mis à jour, 1 morts, 3 déplacés, 0 nouveaux
+2025-05-04T23:56:57.436+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Gestion de la colonisation par les plantes drageonnantes...
+2025-05-04T23:56:57.436+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca a colonisé de (1,0) vers (0,0)
+2025-05-04T23:56:57.436+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (2,1) vers (1,1)
+2025-05-04T23:56:57.440+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : 2 colonisations effectuées
+2025-05-04T23:56:57.488+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.SimulationService          : Exécution du pas 6 de la simulation 1
+2025-05-04T23:56:57.495+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : Application des traitements au pas 6...
+2025-05-04T23:56:57.502+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : 0 arrosages, 0 engrais, 0 insecticides appliqués
+2025-05-04T23:56:57.503+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Mise à jour des plantes...
+2025-05-04T23:56:57.505+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.508+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) est devenue mature
+2025-05-04T23:56:57.513+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Tuberosum en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.514+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.527+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : 7 plantes mises à jour, 1 plantes sont devenues matures
+2025-05-04T23:56:57.529+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Gestion des insectes...
+2025-05-04T23:56:57.538+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Insecte Hanneton s'est déplacé de (2,1) vers (1,2)
+2025-05-04T23:56:57.542+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Insecte Puceron s'est déplacé de (1,2) vers (0,2)
+2025-05-04T23:56:57.544+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : 3 insectes mis à jour, 0 morts, 2 déplacés, 0 nouveaux
+2025-05-04T23:56:57.545+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Gestion de la colonisation par les plantes drageonnantes...
+2025-05-04T23:56:57.546+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (1,0) vers (0,0)
+2025-05-04T23:56:57.549+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : 1 colonisations effectuées
+2025-05-04T23:56:57.553+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.SimulationService          : Exécution du pas 7 de la simulation 1
+2025-05-04T23:56:57.561+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : Application des traitements au pas 7...
+2025-05-04T23:56:57.569+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : Arrosage appliqué depuis la parcelle (2,0) sur 3 parcelles
+2025-05-04T23:56:57.572+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : Arrosage appliqué depuis la parcelle (1,2) sur 4 parcelles
+2025-05-04T23:56:57.573+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : 2 arrosages, 0 engrais, 0 insecticides appliqués
+2025-05-04T23:56:57.573+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Mise à jour des plantes...
+2025-05-04T23:56:57.573+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Solanum lycopersicum en (0,0) peut maintenant produire des fruits
+2025-05-04T23:56:57.574+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.575+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.575+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.576+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) peut maintenant produire des fruits
+2025-05-04T23:56:57.576+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.577+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Tuberosum en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.578+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.579+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.580+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : 8 plantes mises à jour, 0 plantes sont devenues matures
+2025-05-04T23:56:57.580+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Gestion des insectes...
+2025-05-04T23:56:57.581+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Insecte Puceron mort de faim en (0,2)
+2025-05-04T23:56:57.583+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : 3 insectes mis à jour, 1 morts, 0 déplacés, 0 nouveaux
+2025-05-04T23:56:57.583+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Gestion de la colonisation par les plantes drageonnantes...
+2025-05-04T23:56:57.584+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca a colonisé de (1,0) vers (2,0)
+2025-05-04T23:56:57.584+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (1,0) vers (0,0)
+2025-05-04T23:56:57.584+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (2,1) vers (2,2)
+2025-05-04T23:56:57.590+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : 3 colonisations effectuées
+2025-05-04T23:56:57.591+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.SimulationService          : Exécution du pas 8 de la simulation 1
+2025-05-04T23:56:57.617+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : Application des traitements au pas 8...
+2025-05-04T23:56:57.617+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : 0 arrosages, 0 engrais, 0 insecticides appliqués
+2025-05-04T23:56:57.617+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Mise à jour des plantes...
+2025-05-04T23:56:57.618+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (0,0) est devenue mature
+2025-05-04T23:56:57.618+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.619+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.620+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.620+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.621+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.622+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.622+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Tuberosum en (1,1) est devenue mature
+2025-05-04T23:56:57.622+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Tuberosum en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.623+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) est devenue mature
+2025-05-04T23:56:57.623+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.624+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.625+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,2) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.626+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : 11 plantes mises à jour, 3 plantes sont devenues matures
+2025-05-04T23:56:57.626+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Gestion des insectes...
+2025-05-04T23:56:57.627+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : 2 insectes mis à jour, 0 morts, 0 déplacés, 0 nouveaux
+2025-05-04T23:56:57.627+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Gestion de la colonisation par les plantes drageonnantes...
+2025-05-04T23:56:57.627+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca a colonisé de (0,0) vers (1,1)
+2025-05-04T23:56:57.628+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (1,0) vers (0,0)
+2025-05-04T23:56:57.628+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (1,1) vers (2,1)
+2025-05-04T23:56:57.634+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : 3 colonisations effectuées
+2025-05-04T23:56:57.635+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.SimulationService          : Exécution du pas 9 de la simulation 1
+2025-05-04T23:56:57.642+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : Application des traitements au pas 9...
+2025-05-04T23:56:57.645+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : Arrosage appliqué depuis la parcelle (1,2) sur 4 parcelles
+2025-05-04T23:56:57.645+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : 1 arrosages, 0 engrais, 0 insecticides appliqués
+2025-05-04T23:56:57.645+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Mise à jour des plantes...
+2025-05-04T23:56:57.646+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (0,0) peut maintenant produire des fruits
+2025-05-04T23:56:57.646+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.647+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) est devenue mature
+2025-05-04T23:56:57.647+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.648+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.649+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.649+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.650+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.651+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.651+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Tuberosum en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.652+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) peut maintenant produire des fruits
+2025-05-04T23:56:57.652+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.652+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.653+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.654+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.654+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,2) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.655+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : 14 plantes mises à jour, 1 plantes sont devenues matures
+2025-05-04T23:56:57.655+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Gestion des insectes...
+2025-05-04T23:56:57.655+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : 2 insectes mis à jour, 0 morts, 0 déplacés, 0 nouveaux
+2025-05-04T23:56:57.655+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Gestion de la colonisation par les plantes drageonnantes...
+2025-05-04T23:56:57.656+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca a colonisé de (1,0) vers (2,0)
+2025-05-04T23:56:57.656+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (1,0) vers (1,1)
+2025-05-04T23:56:57.656+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (1,1) vers (2,2)
+2025-05-04T23:56:57.656+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (2,1) vers (2,0)
+2025-05-04T23:56:57.668+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : 4 colonisations effectuées
+2025-05-04T23:56:57.670+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.SimulationService          : Exécution du pas 10 de la simulation 1
+2025-05-04T23:56:57.683+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : Application des traitements au pas 10...
+2025-05-04T23:56:57.686+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : Arrosage appliqué depuis la parcelle (2,0) sur 3 parcelles
+2025-05-04T23:56:57.690+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : Insecticide appliqué depuis la parcelle (1,2) sur 4 parcelles, 0 insectes affectés
+2025-05-04T23:56:57.690+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : 1 arrosages, 0 engrais, 1 insecticides appliqués
+2025-05-04T23:56:57.690+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Mise à jour des plantes...
+2025-05-04T23:56:57.690+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.691+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) peut maintenant produire des fruits
+2025-05-04T23:56:57.691+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.692+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) est devenue mature
+2025-05-04T23:56:57.692+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.692+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.693+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.693+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.694+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (2,0) est devenue mature
+2025-05-04T23:56:57.694+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.695+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.696+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.697+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Tuberosum en (1,1) peut maintenant produire des fruits
+2025-05-04T23:56:57.697+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Tuberosum en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.698+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.698+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.699+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.699+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.700+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.700+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,2) est devenue mature
+2025-05-04T23:56:57.701+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,2) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.701+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,2) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.701+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : 18 plantes mises à jour, 3 plantes sont devenues matures
+2025-05-04T23:56:57.702+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Gestion des insectes...
+2025-05-04T23:56:57.702+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Insecte Puceron s'est reproduit en (1,0) : 5 nouveaux insectes
+2025-05-04T23:56:57.716+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : 2 insectes mis à jour, 0 morts, 0 déplacés, 5 nouveaux
+2025-05-04T23:56:57.717+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Gestion de la colonisation par les plantes drageonnantes...
+2025-05-04T23:56:57.717+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca a colonisé de (0,0) vers (1,1)
+2025-05-04T23:56:57.717+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (0,0) vers (0,1)
+2025-05-04T23:56:57.718+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca a colonisé de (1,0) vers (1,1)
+2025-05-04T23:56:57.718+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (1,0) vers (0,0)
+2025-05-04T23:56:57.718+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (1,1) vers (2,0)
+2025-05-04T23:56:57.718+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (2,1) vers (2,0)
+2025-05-04T23:56:57.718+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (2,2) vers (1,1)
+2025-05-04T23:56:57.732+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : 7 colonisations effectuées
+2025-05-04T23:56:57.734+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.SimulationService          : Exécution du pas 11 de la simulation 1
+2025-05-04T23:56:57.748+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : Application des traitements au pas 11...
+2025-05-04T23:56:57.749+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : Arrosage appliqué depuis la parcelle (1,2) sur 4 parcelles
+2025-05-04T23:56:57.749+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : 1 arrosages, 0 engrais, 0 insecticides appliqués
+2025-05-04T23:56:57.750+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Mise à jour des plantes...
+2025-05-04T23:56:57.750+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.750+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.751+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) peut maintenant produire des fruits
+2025-05-04T23:56:57.751+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.751+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) est devenue mature
+2025-05-04T23:56:57.751+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.753+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.755+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.756+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.757+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (2,0) peut maintenant produire des fruits
+2025-05-04T23:56:57.757+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.758+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.758+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.758+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.759+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.759+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,1) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.760+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Tuberosum en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.761+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.762+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,1) est devenue mature
+2025-05-04T23:56:57.762+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.762+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.763+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.763+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.764+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.765+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.766+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,1) est devenue mature
+2025-05-04T23:56:57.766+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.766+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,2) peut maintenant produire des fruits
+2025-05-04T23:56:57.766+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,2) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.767+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,2) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.767+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : 25 plantes mises à jour, 3 plantes sont devenues matures
+2025-05-04T23:56:57.767+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Gestion des insectes...
+2025-05-04T23:56:57.768+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Insecte Puceron s'est déplacé de (1,0) vers (0,0)
+2025-05-04T23:56:57.776+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Insecte Puceron s'est déplacé de (1,0) vers (0,0)
+2025-05-04T23:56:57.777+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Insecte Puceron s'est déplacé de (1,0) vers (0,1)
+2025-05-04T23:56:57.778+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Insecte Puceron s'est déplacé de (1,0) vers (0,0)
+2025-05-04T23:56:57.779+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Insecte Puceron s'est déplacé de (1,0) vers (1,1)
+2025-05-04T23:56:57.779+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Insecte Hanneton mort de faim en (1,2)
+2025-05-04T23:56:57.781+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : 7 insectes mis à jour, 1 morts, 5 déplacés, 0 nouveaux
+2025-05-04T23:56:57.781+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Gestion de la colonisation par les plantes drageonnantes...
+2025-05-04T23:56:57.781+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (0,0) vers (1,0)
+2025-05-04T23:56:57.782+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (0,0) vers (1,1)
+2025-05-04T23:56:57.782+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca a colonisé de (1,0) vers (0,0)
+2025-05-04T23:56:57.782+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (1,0) vers (2,0)
+2025-05-04T23:56:57.782+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca a colonisé de (2,0) vers (1,1)
+2025-05-04T23:56:57.782+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (1,1) vers (2,2)
+2025-05-04T23:56:57.782+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (2,1) vers (2,0)
+2025-05-04T23:56:57.783+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (2,1) vers (1,0)
+2025-05-04T23:56:57.797+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : 8 colonisations effectuées
+2025-05-04T23:56:57.799+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.SimulationService          : Exécution du pas 12 de la simulation 1
+2025-05-04T23:56:57.804+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : Application des traitements au pas 12...
+2025-05-04T23:56:57.805+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : Engrais appliqué depuis la parcelle (2,0) sur 3 parcelles
+2025-05-04T23:56:57.805+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : 0 arrosages, 1 engrais, 0 insecticides appliqués
+2025-05-04T23:56:57.805+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Mise à jour des plantes...
+2025-05-04T23:56:57.805+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.806+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.806+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.807+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) peut maintenant produire des fruits
+2025-05-04T23:56:57.807+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.807+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.808+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.808+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.809+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.809+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.809+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.810+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.810+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (2,0) est devenue mature
+2025-05-04T23:56:57.810+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.810+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) est devenue mature
+2025-05-04T23:56:57.810+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.811+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.811+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.811+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.812+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.812+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,1) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.813+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Tuberosum en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.813+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.814+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,1) peut maintenant produire des fruits
+2025-05-04T23:56:57.814+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.814+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) est devenue mature
+2025-05-04T23:56:57.815+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.815+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.815+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.816+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.816+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.816+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.817+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.817+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,1) peut maintenant produire des fruits
+2025-05-04T23:56:57.817+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.817+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,2) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.818+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,2) est devenue mature
+2025-05-04T23:56:57.818+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,2) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.818+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,2) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.819+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : 33 plantes mises à jour, 4 plantes sont devenues matures
+2025-05-04T23:56:57.819+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Gestion des insectes...
+2025-05-04T23:56:57.819+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Insecte Puceron s'est déplacé de (0,0) vers (0,1)
+2025-05-04T23:56:57.821+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Insecte Puceron s'est déplacé de (1,0) vers (2,1)
+2025-05-04T23:56:57.822+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Insecte Puceron s'est déplacé de (0,1) vers (1,0)
+2025-05-04T23:56:57.822+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Insecte Puceron s'est déplacé de (1,1) vers (1,2)
+2025-05-04T23:56:57.824+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : 6 insectes mis à jour, 0 morts, 4 déplacés, 0 nouveaux
+2025-05-04T23:56:57.824+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Gestion de la colonisation par les plantes drageonnantes...
+2025-05-04T23:56:57.825+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (0,0) vers (1,0)
+2025-05-04T23:56:57.825+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (0,0) vers (1,0)
+2025-05-04T23:56:57.825+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (2,0) vers (1,0)
+2025-05-04T23:56:57.825+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (1,1) vers (1,2)
+2025-05-04T23:56:57.825+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (2,1) vers (1,1)
+2025-05-04T23:56:57.825+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (2,2) vers (2,1)
+2025-05-04T23:56:57.834+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : 6 colonisations effectuées
+2025-05-04T23:56:57.835+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.SimulationService          : Exécution du pas 13 de la simulation 1
+2025-05-04T23:56:57.840+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : Application des traitements au pas 13...
+2025-05-04T23:56:57.842+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : Arrosage appliqué depuis la parcelle (2,0) sur 3 parcelles
+2025-05-04T23:56:57.844+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : Arrosage appliqué depuis la parcelle (1,2) sur 4 parcelles
+2025-05-04T23:56:57.844+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : 2 arrosages, 0 engrais, 0 insecticides appliqués
+2025-05-04T23:56:57.844+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Mise à jour des plantes...
+2025-05-04T23:56:57.844+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.844+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.845+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.845+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.845+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) est devenue mature
+2025-05-04T23:56:57.845+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.846+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.846+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.846+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.847+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.847+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.847+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.848+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.848+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.848+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.848+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (2,0) peut maintenant produire des fruits
+2025-05-04T23:56:57.849+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.849+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) peut maintenant produire des fruits
+2025-05-04T23:56:57.849+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.849+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) est devenue mature
+2025-05-04T23:56:57.849+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.850+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) est devenue mature
+2025-05-04T23:56:57.850+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.850+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.850+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.850+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,1) est devenue mature
+2025-05-04T23:56:57.850+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,1) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.850+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Tuberosum en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.850+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.851+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.851+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) peut maintenant produire des fruits
+2025-05-04T23:56:57.851+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.851+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,1) est devenue mature
+2025-05-04T23:56:57.851+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.851+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,1) est devenue mature
+2025-05-04T23:56:57.852+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.852+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) est devenue mature
+2025-05-04T23:56:57.852+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.852+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.853+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.853+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.853+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.853+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.854+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.854+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,2) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.854+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,2) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.855+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,2) peut maintenant produire des fruits
+2025-05-04T23:56:57.855+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,2) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.856+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,2) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.856+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : 39 plantes mises à jour, 7 plantes sont devenues matures
+2025-05-04T23:56:57.856+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Gestion des insectes...
+2025-05-04T23:56:57.857+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Insecte Puceron s'est déplacé de (1,0) vers (2,0)
+2025-05-04T23:56:57.858+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : 6 insectes mis à jour, 0 morts, 1 déplacés, 0 nouveaux
+2025-05-04T23:56:57.858+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Gestion de la colonisation par les plantes drageonnantes...
+2025-05-04T23:56:57.858+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (0,0) vers (1,1)
+2025-05-04T23:56:57.858+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (0,0) vers (1,1)
+2025-05-04T23:56:57.858+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (0,0) vers (1,0)
+2025-05-04T23:56:57.859+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (0,0) vers (1,0)
+2025-05-04T23:56:57.859+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (1,0) vers (0,1)
+2025-05-04T23:56:57.859+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (2,0) vers (1,0)
+2025-05-04T23:56:57.859+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (2,0) vers (1,1)
+2025-05-04T23:56:57.859+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (0,1) vers (0,0)
+2025-05-04T23:56:57.859+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca a colonisé de (1,1) vers (1,0)
+2025-05-04T23:56:57.859+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (1,1) vers (2,2)
+2025-05-04T23:56:57.859+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca a colonisé de (1,1) vers (1,2)
+2025-05-04T23:56:57.859+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca a colonisé de (1,1) vers (2,0)
+2025-05-04T23:56:57.860+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (1,1) vers (1,0)
+2025-05-04T23:56:57.860+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (2,1) vers (2,0)
+2025-05-04T23:56:57.860+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (2,2) vers (1,2)
+2025-05-04T23:56:57.882+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : 15 colonisations effectuées
+2025-05-04T23:56:57.882+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.SimulationService          : Exécution du pas 14 de la simulation 1
+2025-05-04T23:56:57.888+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : Application des traitements au pas 14...
+2025-05-04T23:56:57.888+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : 0 arrosages, 0 engrais, 0 insecticides appliqués
+2025-05-04T23:56:57.888+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Mise à jour des plantes...
+2025-05-04T23:56:57.888+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.888+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.889+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.889+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.889+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) peut maintenant produire des fruits
+2025-05-04T23:56:57.889+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.889+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (0,0) est devenue mature
+2025-05-04T23:56:57.889+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.889+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.890+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.891+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.891+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) est devenue mature
+2025-05-04T23:56:57.891+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.891+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) est devenue mature
+2025-05-04T23:56:57.892+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.893+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.894+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.895+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.896+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.897+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.898+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.899+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.900+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.901+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.902+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.903+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.905+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) peut maintenant produire des fruits
+2025-05-04T23:56:57.906+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.909+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) peut maintenant produire des fruits
+2025-05-04T23:56:57.910+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.910+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) est devenue mature
+2025-05-04T23:56:57.910+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.910+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) est devenue mature
+2025-05-04T23:56:57.910+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.911+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.912+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.913+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,1) peut maintenant produire des fruits
+2025-05-04T23:56:57.913+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,1) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.913+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,1) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.913+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Tuberosum en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.914+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.915+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.916+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.916+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,1) peut maintenant produire des fruits
+2025-05-04T23:56:57.916+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.916+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,1) peut maintenant produire des fruits
+2025-05-04T23:56:57.916+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.916+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) peut maintenant produire des fruits
+2025-05-04T23:56:57.917+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.917+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) est devenue mature
+2025-05-04T23:56:57.917+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.917+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,1) est devenue mature
+2025-05-04T23:56:57.917+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.918+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.918+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.918+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.919+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.919+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.920+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.920+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.923+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,2) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.925+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,2) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.925+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,2) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.925+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,2) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.925+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,2) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.927+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,2) est devenue mature
+2025-05-04T23:56:57.927+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,2) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.927+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,2) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.927+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : 54 plantes mises à jour, 8 plantes sont devenues matures
+2025-05-04T23:56:57.927+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Gestion des insectes...
+2025-05-04T23:56:57.928+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Insecte Puceron s'est déplacé de (2,0) vers (1,0)
+2025-05-04T23:56:57.929+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : 6 insectes mis à jour, 0 morts, 1 déplacés, 0 nouveaux
+2025-05-04T23:56:57.930+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Gestion de la colonisation par les plantes drageonnantes...
+2025-05-04T23:56:57.935+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (0,0) vers (1,0)
+2025-05-04T23:56:57.937+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (0,0) vers (1,0)
+2025-05-04T23:56:57.937+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca a colonisé de (0,0) vers (1,1)
+2025-05-04T23:56:57.937+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (1,0) vers (1,1)
+2025-05-04T23:56:57.937+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (1,0) vers (2,0)
+2025-05-04T23:56:57.937+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca a colonisé de (2,0) vers (2,1)
+2025-05-04T23:56:57.937+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (2,0) vers (2,1)
+2025-05-04T23:56:57.938+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (2,0) vers (1,0)
+2025-05-04T23:56:57.938+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (2,0) vers (2,1)
+2025-05-04T23:56:57.938+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (0,1) vers (1,1)
+2025-05-04T23:56:57.939+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (1,1) vers (1,2)
+2025-05-04T23:56:57.939+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (1,1) vers (0,2)
+2025-05-04T23:56:57.939+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (1,1) vers (0,2)
+2025-05-04T23:56:57.939+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (1,1) vers (1,0)
+2025-05-04T23:56:57.939+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (2,2) vers (1,1)
+2025-05-04T23:56:57.939+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (2,2) vers (1,1)
+2025-05-04T23:56:57.976+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : 16 colonisations effectuées
+2025-05-04T23:56:57.976+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.SimulationService          : Exécution du pas 15 de la simulation 1
+2025-05-04T23:56:57.983+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : Application des traitements au pas 15...
+2025-05-04T23:56:57.985+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : Arrosage appliqué depuis la parcelle (1,2) sur 4 parcelles
+2025-05-04T23:56:57.985+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.TraitementService          : 1 arrosages, 0 engrais, 0 insecticides appliqués
+2025-05-04T23:56:57.985+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Mise à jour des plantes...
+2025-05-04T23:56:57.986+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.986+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.986+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.986+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.986+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.986+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (0,0) peut maintenant produire des fruits
+2025-05-04T23:56:57.987+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.987+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,0) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.987+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.987+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.987+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) peut maintenant produire des fruits
+2025-05-04T23:56:57.988+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.988+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) peut maintenant produire des fruits
+2025-05-04T23:56:57.988+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.988+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) est devenue mature
+2025-05-04T23:56:57.988+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.988+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) est devenue mature
+2025-05-04T23:56:57.988+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.989+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) est devenue mature
+2025-05-04T23:56:57.989+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.989+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.989+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.989+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.990+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.990+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.990+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.990+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.990+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.990+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.991+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.991+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.992+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.992+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.992+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.992+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) peut maintenant produire des fruits
+2025-05-04T23:56:57.992+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.992+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) peut maintenant produire des fruits
+2025-05-04T23:56:57.992+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.993+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.993+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.993+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,0) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.993+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,1) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.993+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,1) : humidité non adaptée (0.5)
+2025-05-04T23:56:57.993+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Tuberosum en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.993+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.994+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.994+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.994+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.994+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.995+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.996+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) peut maintenant produire des fruits
+2025-05-04T23:56:57.996+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.996+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,1) peut maintenant produire des fruits
+2025-05-04T23:56:57.996+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.996+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) est devenue mature
+2025-05-04T23:56:57.996+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.997+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.997+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.997+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.998+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.998+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.998+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.998+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.999+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.999+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.999+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:57.999+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,1) est devenue mature
+2025-05-04T23:56:57.999+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:58.000+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (2,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:58.000+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:58.000+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,1) : humidité non adaptée (1.0)
+2025-05-04T23:56:58.002+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,2) : humidité non adaptée (1.0)
+2025-05-04T23:56:58.002+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (0,2) : humidité non adaptée (1.0)
+2025-05-04T23:56:58.002+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,2) est devenue mature
+2025-05-04T23:56:58.002+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,2) : humidité non adaptée (1.0)
+2025-05-04T23:56:58.002+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca en (1,2) : humidité non adaptée (1.0)
+2025-05-04T23:56:58.002+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,2) : humidité non adaptée (1.0)
+2025-05-04T23:56:58.002+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (1,2) : humidité non adaptée (1.0)
+2025-05-04T23:56:58.002+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,2) : humidité non adaptée (1.0)
+2025-05-04T23:56:58.003+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,2) : humidité non adaptée (1.0)
+2025-05-04T23:56:58.003+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,2) peut maintenant produire des fruits
+2025-05-04T23:56:58.003+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,2) : humidité non adaptée (1.0)
+2025-05-04T23:56:58.003+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta en (2,2) : humidité non adaptée (1.0)
+2025-05-04T23:56:58.003+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : 70 plantes mises à jour, 6 plantes sont devenues matures
+2025-05-04T23:56:58.003+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Gestion des insectes...
+2025-05-04T23:56:58.003+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Insecte Puceron s'est déplacé de (0,0) vers (0,1)
+2025-05-04T23:56:58.004+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : Insecte Puceron s'est déplacé de (2,1) vers (1,2)
+2025-05-04T23:56:58.004+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.InsecteService    : 6 insectes mis à jour, 0 morts, 2 déplacés, 0 nouveaux
+2025-05-04T23:56:58.004+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Gestion de la colonisation par les plantes drageonnantes...
+2025-05-04T23:56:58.005+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (0,0) vers (1,1)
+2025-05-04T23:56:58.005+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (0,0) vers (0,1)
+2025-05-04T23:56:58.005+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca a colonisé de (0,0) vers (0,1)
+2025-05-04T23:56:58.005+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (1,0) vers (0,1)
+2025-05-04T23:56:58.005+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (1,0) vers (2,1)
+2025-05-04T23:56:58.005+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca a colonisé de (2,0) vers (1,1)
+2025-05-04T23:56:58.005+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (2,0) vers (1,1)
+2025-05-04T23:56:58.005+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (1,1) vers (1,0)
+2025-05-04T23:56:58.005+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (1,1) vers (2,1)
+2025-05-04T23:56:58.005+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (1,1) vers (0,0)
+2025-05-04T23:56:58.006+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria vesca a colonisé de (1,1) vers (2,0)
+2025-05-04T23:56:58.006+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (1,1) vers (0,0)
+2025-05-04T23:56:58.006+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (2,1) vers (2,0)
+2025-05-04T23:56:58.006+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (2,1) vers (1,1)
+2025-05-04T23:56:58.006+01:00 DEBUG 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : Plante Fragoria presta a colonisé de (2,2) vers (1,1)
+2025-05-04T23:56:58.030+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.potager_v1.service.PlanteService     : 15 colonisations effectuées
+2025-05-04T23:56:58.085+01:00  INFO 19552 --- [potager-automatise] [restartedMain] c.e.p.service.SimulationService          : Arrêt de la simulation 1
+2025-05-04T23:57:15.203+01:00  INFO 19552 --- [potager-automatise] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-04T23:57:15.203+01:00  INFO 19552 --- [potager-automatise] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-04T23:57:15.206+01:00  INFO 19552 --- [potager-automatise] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-05-04T23:58:12.767+01:00  INFO 19552 --- [potager-automatise] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-04T23:58:12.775+01:00  INFO 19552 --- [potager-automatise] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-04T23:58:12.780+01:00  INFO 19552 --- [potager-automatise] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-04T23:58:12.819+01:00  INFO 19552 --- [potager-automatise] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-04T23:58:12.842+01:00  INFO 19552 --- [potager-automatise] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
