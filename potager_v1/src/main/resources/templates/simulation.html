@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${simulation.nom}">Détail de la simulation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container { margin-top: 30px; }
+        .card { margin-bottom: 20px; }
+        .parcelle {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            margin: 2px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 12px;
+            background-color: #e9ecef;
+        }
+        .plante { background-color: #a3cfbb; }
+        .insecte { position: relative; }
+        .insecte::after {
+            content: '🐞';
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 12px;
+        }
+        .dispositif { position: relative; }
+        .dispositif::before {
+            content: '💧';
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 12px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+        <h1 th:text="${simulation.nom}">Détail de la simulation</h1>
+        <a href="/" class="btn btn-secondary">Retour</a>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Informations</h5>
+                </div>
+                <div class="card-body">
+                    <p><strong>ID:</strong> <span th:text="${simulation.id}">0</span></p>
+                    <p><strong>État:</strong> <span th:text="${simulation.enCours ? 'En cours' : 'Arrêtée'}" th:class="${simulation.enCours ? 'text-success' : 'text-danger'}">État</span></p>
+                    <p><strong>Progression:</strong> <span th:text="${simulation.pasSimulationActuel + '/' + simulation.nbIterationsMax}">0/0</span>
+                        (<span th:text="${#numbers.formatDecimal(simulation.progression, 0, 2) + '%'}">0%</span>)</p>
+                    <p><strong>Dimensions:</strong> <span th:text="${simulation.sizeX + 'x' + simulation.sizeY}">0x0</span></p>
+                    <p><strong>Création:</strong> <span th:text="${simulation.dateCreation}">Date</span></p>
+
+                    <div class="btn-group mt-3">
+                        <form th:action="@{/simulation/{id}/start(id=${simulation.id})}" method="post" th:if="${!simulation.enCours}">
+                            <button type="submit" class="btn btn-success me-2">Démarrer</button>
+                        </form>
+                        <form th:action="@{/simulation/{id}/step(id=${simulation.id})}" method="post" th:if="${simulation.enCours}">
+                            <button type="submit" class="btn btn-primary me-2">Pas suivant</button>
+                        </form>
+                        <form th:action="@{/simulation/{id}/stop(id=${simulation.id})}" method="post" th:if="${simulation.enCours}">
+                            <button type="submit" class="btn btn-danger">Arrêter</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Statistiques</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <p><strong>Parcelles:</strong> <span th:text="${statistiques.nbParcelles}">0</span></p>
+                            <p><strong>Plantes:</strong> <span th:text="${statistiques.nbPlantes}">0</span></p>
+                            <p><strong>Insectes:</strong> <span th:text="${statistiques.nbInsectes}">0</span></p>
+                            <p><strong>Dispositifs:</strong> <span th:text="${statistiques.nbDispositifs}">0</span></p>
+                            <p><strong>Plantes avec fruits:</strong> <span th:text="${statistiques.nbPlantesMaturesAvecFruits}">0</span></p>
+                        </div>
+                        <div class="col-6">
+                            <h6>Répartition des plantes:</h6>
+                            <ul class="list-unstyled">
+                                <li th:each="entry : ${statistiques.compteurEspecesPlantes}"
+                                    th:text="${entry.key + ': ' + entry.value}">Espèce: 0</li>
+                            </ul>
+
+                            <h6>Répartition des insectes:</h6>
+                            <ul class="list-unstyled">
+                                <li th:each="entry : ${statistiques.compteurEspecesInsectes}"
+                                    th:text="${entry.key + ': ' + entry.value}">Espèce: 0</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mt-4">
+        <div class="card-header">
+            <h5>Visualisation du potager</h5>
+        </div>
+        <div class="card-body">
+            <div class="potager">
+                <div th:each="row, yIdx : ${potager}" class="potager-row">
+                    <div th:each="parcelle, xIdx : ${row}"
+                         class="parcelle"
+                         th:classappend="${parcelle != null && !parcelle.plantes.empty ? 'plante' : ''} + ' ' +
+                                     ${parcelle != null && !parcelle.insectes.empty ? 'insecte' : ''} + ' ' +
+                                     ${parcelle != null && parcelle.aDispositif() ? 'dispositif' : ''}">
+                        <span th:text="${xIdx.index + ',' + yIdx.index}">0,0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

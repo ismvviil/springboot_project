@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Potager Automatisé</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container { margin-top: 30px; }
+        .card { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Simulation de Potager Automatisé</h1>
+
+    <div class="card">
+        <div class="card-header">
+            <h5>Créer une nouvelle simulation</h5>
+        </div>
+        <div class="card-body">
+            <form action="/simulation/new" method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="file" class="form-label">Fichier de configuration XML</label>
+                    <input type="file" class="form-control" id="file" name="file" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Créer</button>
+            </form>
+        </div>
+    </div>
+
+    <h2>Simulations existantes</h2>
+    <div th:if="${simulations.empty}">
+        <p>Aucune simulation disponible.</p>
+    </div>
+    <div th:if="${!simulations.empty}">
+        <div class="list-group">
+            <a th:each="sim : ${simulations}" th:href="@{/simulation/{id}(id=${sim.id})}" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1" th:text="${sim.nom}">Nom de la simulation</h5>
+                    <small th:text="${sim.dateCreation}">Date</small>
+                </div>
+                <p class="mb-1">
+                    Progression: <span th:text="${sim.pasSimulationActuel + '/' + sim.nbIterationsMax}">0/0</span>
+                    (<span th:text="${#numbers.formatDecimal(sim.progression, 0, 2) + '%'}">0%</span>)
+                </p>
+                <small th:text="${sim.enCours ? 'En cours' : 'Arrêtée'}">État</small>
+            </a>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
