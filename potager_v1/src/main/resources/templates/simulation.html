@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${simulation.nom}">Détail de la simulation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2ecc71;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-bg: #f8f9fa;
+            --dark-bg: #343a40;
+            --text-dark: #2c3e50;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: var(--text-dark);
+            padding-bottom: 2rem;
+        }
+
+        .navbar {
+            background-color: var(--dark-bg);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand i {
+            color: var(--primary-color);
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+
+        .page-header {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #dee2e6;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            background-color: white;
+            border-bottom: 1px solid #eaeaea;
+            padding: 1rem 1.25rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .card-header i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .info-item i {
+            width: 24px;
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #27ae60;
+            border-color: #27ae60;
+        }
+
+        .btn-success {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        .btn-success:hover {
+            background-color: #2980b9;
+            border-color: #2980b9;
+        }
+
+        .btn-danger {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        .btn-danger:hover {
+            background-color: #c0392b;
+            border-color: #c0392b;
+        }
+
+        .btn-back {
+            display: flex;
+            align-items: center;
+        }
+
+        .btn-back i {
+            margin-right: 5px;
+        }
+
+        .progress {
+            height: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        .badge {
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+
+        .parcelle {
+            width: 50px;
+            height: 50px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2px;
+            border-radius: 4px;
+            font-size: 11px;
+            background-color: #f8f9fa;
+            box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+            position: relative;
+            transition: all 0.2s;
+        }
+
+        .parcelle:hover {
+            transform: scale(1.05);
+            z-index: 1;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        /* Assure que la visualisation du potager soit bien visible même en hauteur */
+        .potager {
+            height: 100%;
+            min-height: 400px;
+            padding: 1rem;
+            background-color: white;
+            border-radius: 10px;
+            overflow: auto;
+        }
+
+        .plante {
+            background-color: rgba(46, 204, 113, 0.3);
+        }
+
+        /* Ajout de l'icône pour les parcelles avec plantes */
+        .plante::before {
+            content: '🌱';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            font-size: 14px;
+        }
+
+        .insecte::after {
+            content: '🐞';
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            font-size: 14px;
+        }
+
+        .dispositif::before {
+            content: '💧';
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            font-size: 14px;
+        }
+
+        .potager {
+            padding: 1rem;
+            background-color: white;
+            border-radius: 10px;
+            overflow-x: auto;
+        }
+
+        .potager-row {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .legend {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            border-radius: 3px;
+        }
+
+        .stat-card {
+            border-radius: 10px;
+            padding: 1.25rem;
+            height: 100%;
+            background-color: white;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        <!-- Ajoutez ce code dans votre section <style> existante -->
+        /* Style de base pour toutes les icônes statistiques */
+        .stat-icon {
+            font-size: 2.5rem;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            opacity: 0.7; /* Augmenté pour une meilleure visibilité */
+        }
+
+        /* Couleur personnalisée pour chaque icône */
+        .fa-th.stat-icon {
+            color: #9b59b6; /* Violet pour parcelles */
+        }
+
+        .fa-seedling.stat-icon {
+            color: #2ecc71; /* Vert pour plantes */
+        }
+
+        .fa-bug.stat-icon {
+            color: #e74c3c; /* Rouge pour insectes */
+        }
+
+        .fa-tint.stat-icon {
+            color: #3498db; /* Bleu pour dispositifs */
+        }
+
+        /* Ajouter une légère animation au survol des cartes */
+        .stat-card:hover .stat-icon {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+        .stat-label {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            color: #e9ecef;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            opacity: 0.5;
+        }
+
+        .species-chip {
+            display: inline-block;
+            padding: 3px 12px;
+            margin: 3px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            background-color: rgba(52, 152, 219, 0.1);
+            border: 1px solid rgba(52, 152, 219, 0.2);
+        }
+
+        .species-count {
+            font-weight: 600;
+            margin-left: 5px;
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin-top: 1rem;
+            }
+
+            .card {
+                margin-bottom: 1rem;
+            }
+
+            .parcelle {
+                width: 40px;
+                height: 40px;
+                font-size: 10px;
+            }
+
+            .stat-value {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <i class="fas fa-seedling"></i>
+            Potager Automatisé
+        </a>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="page-header">
+        <h1>
+            <i class="fas fa-leaf text-success me-2"></i>
+            <span th:text="${simulation.nom}">Détail de la simulation</span>
+        </h1>
+        <a href="/" class="btn btn-outline-secondary btn-back">
+            <i class="fas fa-arrow-left"></i> Retour
+        </a>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <div>
+                    <span class="fw-bold">Progression:</span>
+                    <span th:text="${simulation.pasSimulationActuel + '/' + simulation.nbIterationsMax}">0/0</span>
+                </div>
+                <span class="badge" th:class="${simulation.enCours ? 'bg-success' : 'bg-danger'}"
+                      th:text="${simulation.enCours ? 'En cours' : 'Arrêtée'}">État</span>
+            </div>
+            <div class="progress" style="height: 10px;">
+                <div class="progress-bar bg-success" role="progressbar"
+                     th:style="'width: ' + ${simulation.progression} + '%'"
+                     th:aria-valuenow="${simulation.progression}"
+                     aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="text-end mt-1">
+                <small th:text="${#numbers.formatDecimal(simulation.progression, 0, 2) + '%'}">0%</small>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Overview -->
+    <div class="row mb-4">
+        <div class="col-6 col-lg-3 mb-3">
+            <div class="stat-card position-relative">
+                <i class="fas fa-th stat-icon"></i>
+                <div class="stat-value" th:text="${statistiques.nbParcelles}">0</div>
+                <div class="stat-label">Parcelles</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3 mb-3">
+            <div class="stat-card position-relative">
+                <i class="fas fa-seedling stat-icon"></i>
+                <div class="stat-value" th:text="${statistiques.nbPlantes}">0</div>
+                <div class="stat-label">Plantes</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3 mb-3">
+            <div class="stat-card position-relative">
+                <i class="fas fa-bug stat-icon"></i>
+                <div class="stat-value" th:text="${statistiques.nbInsectes}">0</div>
+                <div class="stat-label">Insectes</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3 mb-3">
+            <div class="stat-card position-relative">
+                <i class="fas fa-tint stat-icon"></i>
+                <div class="stat-value" th:text="${statistiques.nbDispositifs}">0</div>
+                <div class="stat-label">Dispositifs</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Left Side: Information and Statistics -->
+        <div class="col-lg-5">
+            <!-- Information Panel -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-info-circle"></i>
+                    Informations
+                </div>
+                <div class="card-body">
+                    <div class="info-item">
+                        <i class="fas fa-fingerprint"></i>
+                        <span><strong>ID:</strong> <span th:text="${simulation.id}">0</span></span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-ruler-combined"></i>
+                        <span><strong>Dimensions:</strong> <span th:text="${simulation.sizeX + 'x' + simulation.sizeY}">0x0</span></span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span><strong>Création:</strong> <span th:text="${simulation.dateCreation}">Date</span></span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-apple-alt"></i>
+                        <span><strong>Plantes avec fruits:</strong> <span th:text="${statistiques.nbPlantesMaturesAvecFruits}">0</span></span>
+                    </div>
+
+                    <div class="btn-group mt-4 d-flex">
+                        <form th:action="@{/simulation/{id}/start(id=${simulation.id})}" method="post" th:if="${!simulation.enCours}" class="me-2 flex-fill">
+                            <button type="submit" class="btn btn-success w-100">
+                                <i class="fas fa-play me-2"></i>Démarrer
+                            </button>
+                        </form>
+                        <form th:action="@{/simulation/{id}/step(id=${simulation.id})}" method="post" th:if="${simulation.enCours}" class="me-2 flex-fill">
+                            <button type="submit" class="btn btn-primary w-100">
+                                <i class="fas fa-step-forward me-2"></i>Pas suivant
+                            </button>
+                        </form>
+                        <form th:action="@{/simulation/{id}/stop(id=${simulation.id})}" method="post" th:if="${simulation.enCours}" class="flex-fill">
+                            <button type="submit" class="btn btn-danger w-100">
+                                <i class="fas fa-stop me-2"></i>Arrêter
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics Panel -->
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-chart-pie"></i>
+                    Statistiques
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="mb-3">
+                                <i class="fas fa-leaf text-success me-2"></i>
+                                Répartition des plantes
+                            </h6>
+                            <div class="species-distribution mb-4">
+                                <div th:each="entry : ${statistiques.compteurEspecesPlantes}" class="species-chip">
+                                    <span th:text="${entry.key}">Espèce</span>
+                                    <span class="species-count" th:text="${entry.value}">0</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="mb-3">
+                                <i class="fas fa-bug text-warning me-2"></i>
+                                Répartition des insectes
+                            </h6>
+                            <div class="species-distribution">
+                                <div th:each="entry : ${statistiques.compteurEspecesInsectes}" class="species-chip">
+                                    <span th:text="${entry.key}">Espèce</span>
+                                    <span class="species-count" th:text="${entry.value}">0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Potager Visualization -->
+        <div class="col-lg-7">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-map"></i>
+                    Visualisation du potager
+                </div>
+                <div class="card-body">
+                    <div class="potager">
+                        <div th:each="row, yIdx : ${potager}" class="potager-row">
+                            <div th:each="parcelle, xIdx : ${row}"
+                                 class="parcelle"
+                                 th:classappend="${(parcelle != null and parcelle.plantes != null and not parcelle.plantes.empty) ? 'plante' : ''}
+                                  + ${(parcelle != null and parcelle.insectes != null and not parcelle.insectes.empty) ? ' insecte' : ''}
+                                  + ${(parcelle != null and parcelle.aDispositif()) ? ' dispositif' : ''}">
+                                <span th:text="${xIdx.index + ',' + yIdx.index}">0,0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="legend mt-3">
+                        <div class="legend-item">
+                            <div class="legend-color" style="background-color: #f8f9fa;"></div>
+                            <span>Parcelle vide</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background-color: rgba(46, 204, 113, 0.3); position: relative;">
+                                <span style="position: absolute; top: -5px; left: -5px; font-size: 12px;">🌱</span>
+                            </div>
+                            <span>Plante</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color position-relative">
+                                <span style="position: absolute; top: -5px; right: -5px; font-size: 12px;">🐞</span>
+                            </div>
+                            <span>Insecte</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color position-relative">
+                                <span style="position: absolute; top: -5px; left: -5px; font-size: 12px;">💧</span>
+                            </div>
+                            <span>Dispositif</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

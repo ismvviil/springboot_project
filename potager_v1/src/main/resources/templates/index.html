@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potager Automatisé</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2ecc71;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-bg: #f8f9fa;
+            --dark-bg: #343a40;
+            --text-dark: #2c3e50;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: var(--text-dark);
+            padding-bottom: 2rem;
+        }
+
+        .navbar {
+            background-color: var(--dark-bg);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand i {
+            color: var(--primary-color);
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+
+        .page-header {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #dee2e6;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            background-color: white;
+            border-bottom: 1px solid #eaeaea;
+            padding: 1rem 1.25rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .card-header i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #27ae60;
+            border-color: #27ae60;
+        }
+
+        .btn-success {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        .btn-success:hover {
+            background-color: #2980b9;
+            border-color: #2980b9;
+        }
+
+        .btn-danger {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        .btn-danger:hover {
+            background-color: #c0392b;
+            border-color: #c0392b;
+        }
+
+        .simulation-item {
+            transition: all 0.2s ease;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .simulation-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .progress {
+            height: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        .badge {
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+
+        .badge-running {
+            background-color: #2ecc71;
+        }
+
+        .badge-stopped {
+            background-color: #e74c3c;
+        }
+
+        .input-group-text {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(46, 204, 113, 0.25);
+        }
+
+        .form-label {
+            font-weight: 500;
+        }
+
+        .upload-area {
+            border: 2px dashed #dee2e6;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .upload-area:hover {
+            border-color: var(--primary-color);
+            background-color: rgba(46, 204, 113, 0.05);
+        }
+
+        .upload-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .empty-state i {
+            font-size: 3rem;
+            color: #ced4da;
+            margin-bottom: 1rem;
+        }
+
+        .stats-card {
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background-color: white;
+            box-shadow: var(--card-shadow);
+        }
+
+        .stats-number {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .stats-label {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .parcelle {
+            width: 50px;
+            height: 50px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2px;
+            border-radius: 4px;
+            font-size: 11px;
+            background-color: #f8f9fa;
+            box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+            position: relative;
+            transition: all 0.2s;
+        }
+
+        .parcelle:hover {
+            transform: scale(1.05);
+            z-index: 1;
+        }
+
+        .plante {
+            background-color: rgba(46, 204, 113, 0.3);
+        }
+
+        .insecte::after {
+            content: '🐞';
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            font-size: 14px;
+        }
+
+        .dispositif::before {
+            content: '💧';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            font-size: 14px;
+        }
+
+        .potager {
+            padding: 1rem;
+            background-color: white;
+            border-radius: 10px;
+            overflow-x: auto;
+        }
+
+        .potager-row {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .species-distribution {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .species-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            margin: 2px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            background-color: rgba(46, 204, 113, 0.2);
+            color: var(--text-dark);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin-top: 1rem;
+            }
+
+            .card {
+                margin-bottom: 1rem;
+            }
+
+            .parcelle {
+                width: 40px;
+                height: 40px;
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-dark mb-4">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <i class="fas fa-seedling"></i>
+            Potager Automatisé
+        </a>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-plus-circle"></i>
+                    Créer une nouvelle simulation
+                </div>
+                <div class="card-body">
+                    <form action="/simulation/new" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="file" class="form-label">Fichier de configuration XML</label>
+                            <div class="upload-area" onclick="document.getElementById('file').click()">
+                                <div class="upload-icon">
+                                    <i class="fas fa-file-upload"></i>
+                                </div>
+                                <p class="mb-0">Cliquez ou glissez votre fichier XML ici</p>
+                                <input type="file" class="form-control d-none" id="file" name="file" required>
+                                <p class="selected-file mt-2 text-muted small d-none">Aucun fichier sélectionné</p>
+                            </div>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-play me-2"></i>Créer la simulation
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <h2 class="mt-4 mb-3">
+                <i class="fas fa-list me-2"></i>
+                Simulations existantes
+            </h2>
+
+            <div th:if="${simulations.empty}" class="empty-state">
+                <i class="fas fa-seedling"></i>
+                <h5>Aucune simulation disponible</h5>
+                <p class="text-muted">Créez une nouvelle simulation pour commencer</p>
+            </div>
+
+            <div th:if="${!simulations.empty}" class="list-group mb-4">
+                <a th:each="sim : ${simulations}" th:href="@{/simulation/{id}(id=${sim.id})}"
+                   class="list-group-item list-group-item-action simulation-item">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">
+                            <i class="fas fa-leaf me-2 text-success"></i>
+                            <span th:text="${sim.nom}">Nom de la simulation</span>
+                        </h5>
+                        <small th:text="${sim.dateCreation}">Date</small>
+                    </div>
+                    <p class="mb-1">
+                        <span th:text="${sim.pasSimulationActuel + '/' + sim.nbIterationsMax}">0/0</span>
+                    </p>
+                    <div class="progress">
+                        <div class="progress-bar bg-success" role="progressbar"
+                             th:style="'width: ' + ${sim.progression} + '%'"
+                             th:aria-valuenow="${sim.progression}"
+                             aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                            <span th:class="${sim.enCours ? 'badge badge-running' : 'badge badge-stopped'}"
+                                  th:text="${sim.enCours ? 'En cours' : 'Arrêtée'}">État</span>
+                        <small th:text="${#numbers.formatDecimal(sim.progression, 0, 2) + '%'}">0%</small>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Script pour afficher le nom du fichier sélectionné
+    document.getElementById('file').addEventListener('change', function() {
+        const fileLabel = document.querySelector('.selected-file');
+        fileLabel.classList.remove('d-none');
+        if(this.files.length > 0) {
+            fileLabel.textContent = this.files[0].name;
+        } else {
+            fileLabel.textContent = 'Aucun fichier sélectionné';
+        }
+    });
+</script>
+</body>
+</html>

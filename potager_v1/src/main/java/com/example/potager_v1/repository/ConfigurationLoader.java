@@ -1,12 +1,17 @@
 package com.example.potager_v1.repository;
 
 import com.example.potager_v1.model.Parcelle;
-import com.example.potager_v1.model.insect.Insecte;
-import com.example.potager_v1.model.plante.Plante;
-import com.example.potager_v1.model.plante.PlanteDrageonnante;
+import com.example.potager_v1.model.enums.EspeceInsecte;
+import com.example.potager_v1.model.enums.EspecePlante;
+import com.example.potager_v1.model.Insecte;
+import com.example.potager_v1.model.Plante;
+import com.example.potager_v1.model.PlanteDrageonnante;
 import com.example.potager_v1.model.traitement.Dispositif;
 import com.example.potager_v1.model.traitement.Programme;
 import com.example.potager_v1.model.traitement.TypeTraitement;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -19,12 +24,28 @@ import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+
+@Component
+@RequiredArgsConstructor
 public class ConfigurationLoader {
+
+    private final ParcelleRepository parcelleRepository;
+    private final PlanteRepository planteRepository;
+    private final InsecteRepository insecteRepository;
+    private final DispositifRepository dispositifRepository;
+    private final ProgrammeRepository programmeRepository;
+
+    private String nomPotager;
+    private int nbIterations;
+    private int sizeX;
+    private int sizeY;
+
     /**
-     * Charge un fichier de configuration XML et initialise le potager
+     * Charge un fichier de configuration XML et initialise le potager en base de données
      * @param cheminFichier Chemin vers le fichier XML
-     * @return Une carte contenant toutes les parcelles du potager
+     * @return Une map contenant les parcelles indexées par "x,y"
      */
+    @Transactional
     public Map<String, Parcelle> chargerConfiguration(String cheminFichier) {
         Map<String, Parcelle> parcelles = new HashMap<>();
 
@@ -37,10 +58,10 @@ public class ConfigurationLoader {
 
             // Récupération de l'élément racine (Potager)
             Element potager = document.getDocumentElement();
-            String nomPotager = potager.getAttribute("Nom");
-            int nbIterations = Integer.parseInt(potager.getAttribute("Nb_iterations"));
-            int sizeX = Integer.parseInt(potager.getAttribute("Size_x"));
-            int sizeY = Integer.parseInt(potager.getAttribute("Size_y"));
+            this.nomPotager = potager.getAttribute("Nom");
+            this.nbIterations = Integer.parseInt(potager.getAttribute("Nb_iterations"));
+            this.sizeX = Integer.parseInt(potager.getAttribute("Size_x"));
+            this.sizeY = Integer.parseInt(potager.getAttribute("Size_y"));
 
             System.out.println("Chargement du potager : " + nomPotager);
             System.out.println("Dimensions : " + sizeX + "x" + sizeY);
@@ -60,6 +81,9 @@ public class ConfigurationLoader {
                 ajouterPlantes(parcelleElement, parcelle);
                 ajouterInsectes(parcelleElement, parcelle);
                 ajouterDispositif(parcelleElement, parcelle);
+
+                // Sauvegarde en base de données
+                parcelleRepository.save(parcelle);
 
                 // Ajout à la map avec clé "x,y"
                 parcelles.put(posX + "," + posY, parcelle);
@@ -83,7 +107,8 @@ public class ConfigurationLoader {
             Element planteElement = (Element) planteNodes.item(i);
 
             // Récupération des attributs
-            String espece = planteElement.getAttribute("Espece");
+            String especeStr = planteElement.getAttribute("Espece");
+            EspecePlante espece = EspecePlante.fromNomScientifique(especeStr);
             int ageMaturitePied = Integer.parseInt(planteElement.getAttribute("Maturite_pied"));
             int ageMaturiteFruit = Integer.parseInt(planteElement.getAttribute("Maturite_fruit"));
             int nbRecolteMax = Integer.parseInt(planteElement.getAttribute("Nb_recolte"));
@@ -91,12 +116,13 @@ public class ConfigurationLoader {
             double humiditeMin = Double.parseDouble(planteElement.getAttribute("Humidite_min"));
             double humiditeMax = Double.parseDouble(planteElement.getAttribute("Humidite_max"));
 
-            // Création de la plante (utilise le constructeur avec nom scientifique)
+            // Création de la plante
             Plante plante = new Plante(espece, ageMaturitePied, ageMaturiteFruit,
                     nbRecolteMax, surface, humiditeMin, humiditeMax);
 
             // Ajout à la parcelle
             parcelle.ajouterPlante(plante);
+
             System.out.println("Plante " + plante.getNomScientifique() + " ajoutée en (" +
                     parcelle.getPosX() + "," + parcelle.getPosY() + ")");
         }
@@ -107,7 +133,8 @@ public class ConfigurationLoader {
             Element planteElement = (Element) planteDragNodes.item(i);
 
             // Récupération des attributs
-            String espece = planteElement.getAttribute("Espece");
+            String especeStr = planteElement.getAttribute("Espece");
+            EspecePlante espece = EspecePlante.fromNomScientifique(especeStr);
             int ageMaturitePied = Integer.parseInt(planteElement.getAttribute("Maturite_pied"));
             int ageMaturiteFruit = Integer.parseInt(planteElement.getAttribute("Maturite_fruit"));
             int nbRecolteMax = Integer.parseInt(planteElement.getAttribute("Nb_recolte"));
@@ -116,19 +143,19 @@ public class ConfigurationLoader {
             double humiditeMax = Double.parseDouble(planteElement.getAttribute("Humidite_max"));
             double probaColonisation = Double.parseDouble(planteElement.getAttribute("Proba_Colonisation"));
 
-            // Création de la plante drageonnante (utilise le constructeur avec nom scientifique)
             try {
+                // Création de la plante drageonnante
                 PlanteDrageonnante plante = new PlanteDrageonnante(
                         espece, ageMaturitePied, ageMaturiteFruit, nbRecolteMax,
                         surface, humiditeMin, humiditeMax, probaColonisation);
 
                 // Ajout à la parcelle
                 parcelle.ajouterPlante(plante);
+
                 System.out.println("Plante drageonnante " + plante.getNomScientifique() +
                         " (Proba: " + probaColonisation + ") ajoutée en (" +
                         parcelle.getPosX() + "," + parcelle.getPosY() + ")");
             } catch (IllegalArgumentException e) {
-                // Si l'espèce n'est pas drageonnante, on log l'erreur
                 System.err.println("Erreur: " + e.getMessage() +
                         " à la position (" + parcelle.getPosX() + "," + parcelle.getPosY() + ")");
             }
@@ -144,7 +171,8 @@ public class ConfigurationLoader {
             Element insecteElement = (Element) insecteNodes.item(i);
 
             // Récupération des attributs
-            String espece = insecteElement.getAttribute("Espece");
+            String especeStr = insecteElement.getAttribute("Espece");
+            EspeceInsecte espece = EspeceInsecte.fromNom(especeStr);
             String sexe = insecteElement.getAttribute("Sexe");
             int vieMax = Integer.parseInt(insecteElement.getAttribute("Vie_max"));
             int dureeVieMax = Integer.parseInt(insecteElement.getAttribute("Duree_vie_max"));
@@ -153,17 +181,19 @@ public class ConfigurationLoader {
             int maxPortee = Integer.parseInt(insecteElement.getAttribute("Max_portee"));
             int tempsEntreRepro = Integer.parseInt(insecteElement.getAttribute("Temps_entre_repro"));
 
-            // Création de l'insecte (utilise le constructeur avec nom d'espèce)
+            // Création de l'insecte
             Insecte insecte = new Insecte(espece, sexe, vieMax, dureeVieMax,
                     probaMobilite, resistanceInsecticide,
                     maxPortee, tempsEntreRepro);
 
             // Ajout à la parcelle
             parcelle.ajouterInsecte(insecte);
+
             System.out.println("Insecte " + insecte.getEspece().getNom() + " (" + sexe + ") ajouté en (" +
                     parcelle.getPosX() + "," + parcelle.getPosY() + ")");
         }
     }
+
     /**
      * Ajoute le dispositif défini dans l'élément XML à la parcelle
      */
@@ -202,10 +232,29 @@ public class ConfigurationLoader {
                         "," + parcelle.getPosY() + ")");
             }
 
-            // Ajout du dispositif à la parcelle
+            // Association du dispositif à la parcelle
             parcelle.setDispositif(dispositif);
+            dispositif.setParcelle(parcelle);
+
             System.out.println("Dispositif (rayon: " + rayon + ") ajouté en (" +
                     parcelle.getPosX() + "," + parcelle.getPosY() + ")");
         }
+    }
+
+    // Getters pour les informations de configuration
+    public String getNomPotager() {
+        return nomPotager;
+    }
+
+    public int getNbIterations() {
+        return nbIterations;
+    }
+
+    public int getSizeX() {
+        return sizeX;
+    }
+
+    public int getSizeY() {
+        return sizeY;
     }
 }

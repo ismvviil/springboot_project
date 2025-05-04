@@ -1,40 +1,48 @@
+// Dispositif.java
 package com.example.potager_v1.model.traitement;
 
 import com.example.potager_v1.model.Parcelle;
-import com.example.potager_v1.model.insect.Insecte;
+import com.example.potager_v1.model.Insecte;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Classe représentant un dispositif de traitement dans le potager
- */
+@Entity
+@Table(name = "dispositifs")
+@Data
+@NoArgsConstructor
 public class Dispositif {
-    private int rayon;  // Rayon d'action en nombre de parcelles
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Min(value = 1, message = "Le rayon doit être positif")
+    private int rayon;
+
+    @OneToOne(mappedBy = "dispositif")
+    @JsonIgnore
+    private Parcelle parcelle;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "dispositif_id")
     private List<Programme> programmes = new ArrayList<>();
 
-    /**
-     * Constructeur du dispositif de traitement
-     * @param rayon Rayon d'action en nombre de parcelles
-     */
+    // Constructeur avec le rayon
     public Dispositif(int rayon) {
         this.rayon = rayon;
     }
 
-    /**
-     * Ajoute un programme au dispositif
-     * @param programme Programme à ajouter
-     */
+    // Méthode pour ajouter un programme
     public void ajouterProgramme(Programme programme) {
         programmes.add(programme);
     }
 
-    /**
-     * Applique les traitements actifs au pas de simulation courant
-     * @param pasSimulation Pas de simulation courant
-     * @param potager Liste des parcelles du potager
-     * @param parcelleActuelle Parcelle sur laquelle se trouve le dispositif
-     */
+    // Logique métier
     public void appliquerTraitements(int pasSimulation, List<Parcelle> potager, Parcelle parcelleActuelle) {
         for (Programme programme : programmes) {
             if (programme.estActif(pasSimulation)) {
@@ -43,12 +51,6 @@ public class Dispositif {
         }
     }
 
-    /**
-     * Applique un traitement spécifique
-     * @param programme Programme de traitement à appliquer
-     * @param potager Liste des parcelles du potager
-     * @param parcelleActuelle Parcelle sur laquelle se trouve le dispositif
-     */
     private void appliquerTraitement(Programme programme, List<Parcelle> potager, Parcelle parcelleActuelle) {
         // Récupération des parcelles dans le rayon d'action
         List<Parcelle> parcellesCibles = getParcelleDansRayon(potager, parcelleActuelle);
@@ -63,12 +65,6 @@ public class Dispositif {
         }
     }
 
-    /**
-     * Récupère les parcelles dans le rayon d'action du dispositif
-     * @param potager Liste des parcelles du potager
-     * @param parcelleActuelle Parcelle sur laquelle se trouve le dispositif
-     * @return Liste des parcelles dans le rayon d'action
-     */
     private List<Parcelle> getParcelleDansRayon(List<Parcelle> potager, Parcelle parcelleActuelle) {
         List<Parcelle> parcellesCibles = new ArrayList<>();
 
@@ -79,10 +75,9 @@ public class Dispositif {
             int x = parcelle.getPosX();
             int y = parcelle.getPosY();
 
-            // Calcul de la distance (utilisation de la distance de Manhattan pour simplifier)
+            // Distance de Manhattan
             int distance = Math.abs(x - x0) + Math.abs(y - y0);
 
-            // Si la parcelle est dans le rayon d'action, on l'ajoute à la liste
             if (distance <= rayon) {
                 parcellesCibles.add(parcelle);
             }
@@ -91,63 +86,29 @@ public class Dispositif {
         return parcellesCibles;
     }
 
-    /**
-     * Applique de l'eau aux parcelles cibles
-     * @param parcelles Liste des parcelles cibles
-     */
     private void appliquerEau(List<Parcelle> parcelles) {
         for (Parcelle parcelle : parcelles) {
-            // Augmentation du taux d'humidité de 0.2 (à ajuster selon les besoins)
             double nouveauTaux = parcelle.getTauxHumidite() + 0.2;
-            parcelle.setTauxHumidite(nouveauTaux);
+            parcelle.setTauxHumidite(Math.min(1.0, nouveauTaux));
         }
     }
 
-    /**
-     * Applique de l'engrais aux parcelles cibles
-     * @param parcelles Liste des parcelles cibles
-     */
     private void appliquerEngrais(List<Parcelle> parcelles) {
-        // L'effet de l'engrais pourrait être implémenté dans une version plus avancée
-        // Par exemple, accélérer la croissance des plantes ou augmenter la production
+        // Effet de l'engrais à implémenter
     }
 
-    /**
-     * Applique de l'insecticide aux parcelles cibles
-     * @param parcelles Liste des parcelles cibles
-     */
     private void appliquerInsecticide(List<Parcelle> parcelles) {
         for (Parcelle parcelle : parcelles) {
-            List<Insecte> insectesASupprimer = new ArrayList<>();
+            // Create a copy of the list to iterate over
+            List<Insecte> insectesActuels = new ArrayList<>(parcelle.getInsectes());
 
-            // Parcours des insectes pour appliquer l'insecticide
-            for (Insecte insecte : parcelle.getInsectes()) {
+            for (Insecte insecte : insectesActuels) {
                 if (insecte.appliquerInsecticide()) {
-                    // Si l'insecte meurt, on l'ajoute à la liste à supprimer
-                    insectesASupprimer.add(insecte);
+                    // Remove the insecte from the original list
+                    parcelle.retirerInsecte(insecte);
                 }
-            }
-
-            // Suppression des insectes morts
-            for (Insecte insecte : insectesASupprimer) {
-                parcelle.retirerInsecte(insecte);
             }
         }
     }
-
-    /**
-     * Getter pour le rayon d'action
-     * @return Le rayon d'action en nombre de parcelles
-     */
-    public int getRayon() {
-        return rayon;
-    }
-
-    /**
-     * Getter pour la liste des programmes
-     * @return La liste des programmes du dispositif
-     */
-    public List<Programme> getProgrammes() {
-        return programmes;
-    }
 }
+

@@ -1,95 +1,100 @@
 package com.example.potager_v1.model;
 
-import com.example.potager_v1.model.insect.Insecte;
-import com.example.potager_v1.model.plante.Plante;
 import com.example.potager_v1.model.traitement.Dispositif;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
+import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Parcelle {
-    private int posX;
-    private int posY;
-    private double tauxHumidite = 0.5; // Valeur par défaut
-  private List<Plante> plantes = new ArrayList<>();
-    private List<Insecte> insectes = new ArrayList<>();
-   private Dispositif dispositif;
+@Entity
 
-    /**
-     * Constructeur de parcelle
-     * @param posX Position X de la parcelle
-     * @param posY Position Y de la parcelle
-     */
+@Table(name = "parcelles", indexes = {
+        @Index(name = "idx_position", columnList = "posX,posY,simulation_id", unique = true)
+})
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(exclude = {"plantes", "insectes", "dispositif"})
+public class Parcelle {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
+    private int posX;
+
+    @Column(nullable = false)
+    private int posY;
+
+    @Column(name = "taux_humidite")
+    private double tauxHumidite = 0.5;
+
+    @OneToMany(mappedBy = "parcelle", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Plante> plantes = new ArrayList<>();
+
+    @OneToMany(mappedBy = "parcelle", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Insecte> insectes = new ArrayList<>();
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "dispositif_id")
+    private Dispositif dispositif;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private java.util.Date derniereMiseAJour;
+
+    // Ajout de la relation avec Simulation
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "simulation_id")
+    private Simulation simulation;
+    // Constructeur avec les attributs essentiels
     public Parcelle(int posX, int posY) {
         this.posX = posX;
         this.posY = posY;
+        this.tauxHumidite = 0.5;
     }
 
-    // Getters et setters
-    public int getPosX() {
-        return posX;
-    }
-
-    public int getPosY() {
-        return posY;
-    }
-
-    public double getTauxHumidite() {
-        return tauxHumidite;
-    }
-
-    public void setTauxHumidite(double tauxHumidite) {
-        // Limiter entre 0 et 1
-        this.tauxHumidite = Math.max(0, Math.min(1, tauxHumidite));
-    }
-
-    public List<Plante> getPlantes() {
-        return plantes;
-    }
-
+    // Méthodes pour gérer les relations
     public void ajouterPlante(Plante plante) {
         plantes.add(plante);
-    }
-
-    public List<Insecte> getInsectes() {
-        return insectes;
+        plante.setParcelle(this);
     }
 
     public void ajouterInsecte(Insecte insecte) {
         insectes.add(insecte);
+        insecte.setParcelle(this);
     }
 
     public void retirerInsecte(Insecte insecte) {
         insectes.remove(insecte);
+        insecte.setParcelle(null);
     }
 
-    public Dispositif getDispositif() {
-        return dispositif;
-    }
-
-    public void setDispositif(Dispositif dispositif) {
-        this.dispositif = dispositif;
-    }
-
-    /**
-     * Vérifie si la parcelle a un dispositif de traitement
-     */
     public boolean aDispositif() {
         return dispositif != null;
     }
 
-    /**
-     * Méthode pour mettre à jour la parcelle à chaque pas de simulation
-     */
+    // Logique métier pour la mise à jour
     public void miseAJour() {
-        // Mise à jour des plantes
+        this.derniereMiseAJour = new java.util.Date();
+
+        // Mise à jour de toutes les plantes
         for (Plante plante : new ArrayList<>(plantes)) {
             plante.miseAJour();
         }
 
-        // Mise à jour des insectes
+        // Mise à jour de tous les insectes
         for (Insecte insecte : new ArrayList<>(insectes)) {
             insecte.miseAJour();
         }
+    }
+
+    @PrePersist
+    @PreUpdate
+    protected void onUpdate() {
+        this.derniereMiseAJour = new java.util.Date();
     }
 }
