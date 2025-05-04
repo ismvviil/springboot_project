@@ -18,10 +18,10 @@ Simulation écologique avancée d'un potager, modélisant les interactions compl
 
 ## Captures d'écran
 ### Interface Principale
-![Interface Principale](/screenshots/img1.png)
+![Interface Principale](/potager_v1/screenshots/img1.png)
 
 ### Visualisation du Potager
-![Potager](/screenshots/img2.png)
+![Potager](/potager_v1/screenshots/img2.png)
 
 ## Architecture
 src/
