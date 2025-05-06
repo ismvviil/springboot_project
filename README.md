@@ -14,7 +14,8 @@ Simulation écologique avancée d'un potager, modélisant les interactions compl
 - Java
 - Thymeleaf
 - JPA
-- H2 Database
+- H2 Database(test)
+- Mysql(prod)
 
 ## Captures d'écran
 ### Interface Principale
@@ -60,3 +61,4 @@ Licence ISIR EST SAFI
 
 ## Contact
 Souifi Ismail - souifiismail@gmail.com
+Aoubbad Ossama -oussamaaoubbad@gmail.com
